@@ -21,7 +21,7 @@
 <div class="page">
   <nav>
     <a class="brand" href="#"><span class="brand-mark">H</span>HiQS Labs</a>
-    <div class="nav-links"><a href="#projects">Projects</a><a href="#research">Research</a><a href="#about">About</a></div>
+    <div class="nav-links"><a href="#projects">Projects</a><a href="#how">How it works</a><a href="#research">Research</a><a href="#questions">Questions</a></div>
     <a class="pill dark small" href="https://github.com/HiQS-Labs">Follow on GitHub</a>
   </nav>
 
@@ -65,6 +65,11 @@
     </figure>
   </header>
 
+  <div class="strip" aria-label="Tools the lab's projects run with">
+    <span class="strip-label">RUNS WITH</span>
+    <div class="strip-items"><span>Claude Code</span><span>Codex</span><span>agy</span><span>GitHub Actions</span><span>Slack</span><span>Apple silicon</span><span>Any repo</span></div>
+  </div>
+
   <section id="featured" class="band" aria-labelledby="featured-title">
     <div class="section-head">
       <div><div class="label">[ Featured ]</div><h2 id="featured-title">XYZ Forge</h2></div>
@@ -104,6 +109,58 @@
         </div>
         <i class="tick tl"></i><i class="tick tr"></i><i class="tick bl"></i><i class="tick br"></i>
       </figure>
+    </div>
+  </section>
+
+  <section id="how" class="band" aria-labelledby="how-title">
+    <div class="section-head">
+      <div><div class="label">[ How it works ]</div><h2 id="how-title">How a task moves through the lab</h2></div>
+      <span class="section-note">Same loop in every XYZ project</span>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <figure class="fig fig-mini" aria-label="Diagram: an issue card is claimed and gets a worktree">
+          <div class="fig-paper fig-text" aria-hidden="true">
+            <div class="issue"><span class="issue-no">#1108</span><span class="issue-title">Add intake labels</span><span class="tag">OPEN</span></div>
+            <i class="wire" style="left:50%;top:64px;width:1px;height:26px"></i>
+            <i style="left:calc(50% - 3px);top:86px;width:6px;height:6px;background:var(--pink);transform:rotate(45deg)"></i>
+            <span class="chip-mono" style="left:50%;top:100px;transform:translateX(-50%)">/xyz start-task</span>
+            <span class="fig-caption" style="right:12px">FIG. 03</span>
+          </div>
+          <i class="tick tl"></i><i class="tick tr"></i><i class="tick bl"></i><i class="tick br"></i>
+        </figure>
+        <div class="step-copy"><span class="step-no">STEP 01</span><h3>Claim the issue</h3><p>Pick a GitHub issue. The task gets its own clone and worktree, so nothing lands on main by accident.</p></div>
+      </article>
+      <article class="step">
+        <figure class="fig fig-mini" aria-label="Diagram: three agents working in parallel lanes">
+          <div class="fig-paper fig-text" aria-hidden="true">
+            <div class="lanes">
+              <div><b style="background:var(--pink)"></b><span>CLAUDE</span><s style="width:72%"></s></div>
+              <div><b style="background:var(--lime)"></b><span>CODEX</span><s style="width:54%"></s></div>
+              <div><b style="background:var(--sage)"></b><span>AGY</span><s style="width:86%"></s></div>
+            </div>
+            <span class="fig-caption" style="left:12px">FIG. 04</span>
+            <span class="fig-caption" style="right:12px">3 LANES · 1 REPO</span>
+          </div>
+          <i class="tick tl"></i><i class="tick tr"></i><i class="tick bl"></i><i class="tick br"></i>
+        </figure>
+        <div class="step-copy"><span class="step-no">STEP 02</span><h3>Agents do the work</h3><p>Several coding agents run side by side on one codebase. Every action they take lands as an ordinary commit.</p></div>
+      </article>
+      <article class="step">
+        <figure class="fig fig-mini" aria-label="Diagram: a checklist of review gates ending in a merge">
+          <div class="fig-paper fig-text" aria-hidden="true">
+            <div class="gates">
+              <div><span class="ok">✓</span>relay review r1</div>
+              <div><span class="ok">✓</span>relay review r2</div>
+              <div><span class="ok">✓</span>checks green</div>
+              <div class="merge"><span>→</span>merge → development</div>
+            </div>
+            <span class="fig-caption" style="right:12px">FIG. 05</span>
+          </div>
+          <i class="tick tl"></i><i class="tick tr"></i><i class="tick bl"></i><i class="tick br"></i>
+        </figure>
+        <div class="step-copy"><span class="step-no">STEP 03</span><h3>Review, then merge</h3><p>A second agent reviews the diff in rounds until it is clean. The PR merges from one place, with the trail intact.</p></div>
+      </article>
     </div>
   </section>
 
@@ -208,9 +265,37 @@
     </div>
   </section>
 
+  <section id="questions" class="band faq auto-grid" aria-labelledby="faq-title">
+    <div><div class="label">[ Questions ]</div><h2 id="faq-title">Things people ask</h2><p class="section-lead">Short answers. The long ones live in each repo's README.</p></div>
+    <div class="faq-list">
+      <details><summary>Is everything here open source?<span class="plus" aria-hidden="true"></span></summary><p>Yes. Every project lives in a public GitHub repository under the HiQS-Labs organization. Each repo carries its own license file.</p></details>
+      <details><summary>Which coding agents does XYZ Forge work with?<span class="plus" aria-hidden="true"></span></summary><p>Claude Code, Codex and agy out of the box. The harness talks to agents through plain files and shell scripts, so adding another one is a small change.</p></details>
+      <details><summary>Do I need XYZ Forge to use the skills?<span class="plus" aria-hidden="true"></span></summary><p>No. Skills Army Mini installs skills into whichever coding tool you already use. XYZ Forge adds the multi-agent workflow on top.</p></details>
+      <details><summary>Where do I start if I am new?<span class="plus" aria-hidden="true"></span></summary><p>XYZ mini. It is the smallest version of the workflow and takes one repo and one agent. Move to XYZ Forge when you want more than one agent on the same codebase.</p></details>
+      <details><summary>How do I report a bug or ask for a feature?<span class="plus" aria-hidden="true"></span></summary><p>Open an issue on the project's repo. Issues are the unit of work here, so a clear title and description is the best way to get something built.</p></details>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="cta-copy">
+      <h2 id="cta-title">Pick a project, open the docs, send a pull request.</h2>
+      <div class="actions"><a class="pill sage" href="#projects">Browse projects</a><a class="pill outline light" href="https://github.com/HiQS-Labs">Follow on GitHub ↗</a></div>
+    </div>
+    <div class="cta-tiles" aria-hidden="true">
+      <i></i><i class="on"></i><i></i><i></i><i class="on pink"></i><i></i>
+      <i class="on"></i><i></i><i></i><i class="on lime"></i><i></i><i></i>
+      <i></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i>
+    </div>
+  </section>
+
   <footer>
-    <span>© HiQS Labs</span>
-    <div><a href="https://github.com/HiQS-Labs">GitHub organization ↗</a><a href="https://github.com/orgs/HiQS-Labs/repositories">All repositories ↗</a><a href="https://hiqs-labs.github.io/XYZ-forge/">XYZ Forge docs ↗</a></div>
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="#"><span class="brand-mark">H</span>HiQS Labs</a><p>HiQuality Signals Labs. Open tools for working with AI, built in public.</p><span class="foot-meta">© HiQS Labs · GITHUB.COM/HIQS-LABS</span></div>
+      <div class="foot-col"><span class="label">[ Projects ]</span><a href="https://hiqs-labs.github.io/XYZ-forge/">XYZ Forge</a><a href="https://github.com/HiQS-Labs/XYZ-mini">XYZ mini</a><a href="https://github.com/HiQS-Labs/XYZ-skills-army-mini">Skills Army Mini</a><a href="https://github.com/HiQS-Labs/rebalanceOS">RebalanceOS</a><a href="https://github.com/HiQS-Labs/AEGIS-Sleuth-Slackbot">AEGIS Sleuth</a></div>
+      <div class="foot-col"><span class="label">[ Lab ]</span><a href="#how">How it works</a><a href="#research">Research</a><a href="#questions">Questions</a><a href="#about">About</a></div>
+      <div class="foot-col"><span class="label">[ Elsewhere ]</span><a href="https://github.com/HiQS-Labs">GitHub organization ↗</a><a href="https://github.com/orgs/HiQS-Labs/repositories">All repositories ↗</a><a href="https://hiqs-labs.github.io/XYZ-forge/">XYZ Forge docs ↗</a></div>
+    </div>
+    <div class="foot-pattern" aria-hidden="true"></div>
   </footer>
 </div>
 </body>
