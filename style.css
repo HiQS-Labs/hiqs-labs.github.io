@@ -142,6 +142,7 @@ h3 { margin: 0; font: 600 22px var(--sans); letter-spacing: -.01em; }
 .row:hover { background: #fff; padding-left: 20px; }
 .row .num { font: 400 11px var(--mono); color: var(--faint); }
 .glyph { width: 36px; height: 36px; border-radius: 8px; background: var(--sage-tint); color: var(--sage-ink); display: grid; place-items: center; font-size: 16px; }
+.glyph svg { width: 21px; height: 21px; display: block; }
 .row-copy { display: flex; flex-direction: column; gap: 2px; }
 .row-copy strong { font: 600 17px var(--sans); }
 .row-copy small { font: 400 14px var(--sans); color: var(--muted); }
