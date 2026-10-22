@@ -138,7 +138,7 @@ h3 { margin: 0; font: 600 22px var(--sans); letter-spacing: -.01em; }
 
 /* Projects */
 .rows { border-top: 1px solid var(--line); }
-.row { display: grid; grid-template-columns: 40px 36px minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 22px 12px; border-bottom: 1px solid var(--line); text-decoration: none; transition: background .15s, padding-left .2s; }
+.row { display: grid; grid-template-columns: 40px 132px minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 22px 12px; border-bottom: 1px solid var(--line); text-decoration: none; transition: background .15s, padding-left .2s; }
 .row:hover { background: #fff; padding-left: 20px; }
 .row .num { font: 400 11px var(--mono); color: var(--faint); }
 .glyph { width: 36px; height: 36px; border-radius: 8px; background: var(--sage-tint); color: var(--sage-ink); display: grid; place-items: center; font-size: 16px; }
@@ -156,6 +156,33 @@ h3 { margin: 0; font: 600 22px var(--sans); letter-spacing: -.01em; }
 .cell small { font: 400 12.5px var(--sans); color: var(--muted); }
 .cell .arrow { font-size: 14px; color: var(--faint); }
 .cell.all { align-items: center; justify-content: flex-start; font: 400 11px var(--mono); color: var(--muted); }
+
+/* Project tiles: hatched mini scenes with the icon as a corner badge */
+.tile { position: relative; display: block; width: 132px; height: 88px; padding: 6px; background: repeating-linear-gradient(135deg, rgba(58,57,80,.22) 0 1px, transparent 1px 6px); }
+.tile-paper { position: relative; display: block; height: 100%; border: 1px solid rgba(58,57,80,.18); background-color: #f7f7f5; background-image: linear-gradient(rgba(58,57,80,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(58,57,80,.07) 1px, transparent 1px); background-size: 12px 12px; overflow: hidden; font-size: 8px; letter-spacing: .06em; }
+.tile-paper > span, .tile-paper > i { position: absolute; }
+.tile .glyph { position: absolute; right: -8px; bottom: -8px; width: 28px; height: 28px; border-radius: 6px; border: 1px solid var(--line); background: var(--sage-tint); }
+.tile .glyph svg { width: 15px; height: 15px; }
+.row:hover .tile { background: repeating-linear-gradient(135deg, var(--ink) 0 1px, transparent 1px 6px); }
+.t-agents { left: 50%; top: 12px; transform: translateX(-50%); display: flex; gap: 6px; }
+.t-agents b { width: 7px; height: 7px; display: block; }
+.t-hub { left: 50%; top: 38px; transform: translateX(-50%); width: 24px; height: 24px; background: var(--ink); color: var(--sage); display: grid; place-items: center; font: 700 11px var(--sans); box-shadow: 3px 3px 0 var(--sage); }
+.t-chip { background: #fff; border: 1px solid rgba(58,57,80,.22); padding: 3px 6px; white-space: nowrap; }
+.t-commit { display: flex; gap: 5px; align-items: center; background: #fff; border: 1px solid rgba(58,57,80,.18); padding: 3px 6px; white-space: nowrap; }
+.t-commit em { width: 6px; height: 6px; background: var(--sage); display: block; }
+.t-grid { left: 12px; top: 12px; display: grid; grid-template-columns: repeat(6, 11px); gap: 3px; }
+.t-grid b { width: 11px; height: 11px; border: 1px solid rgba(58,57,80,.25); background: #fff; }
+.t-grid b.on { background: var(--sage); border-color: var(--sage-ink); }
+.t-note { color: var(--faint); white-space: nowrap; }
+.t-list { left: 12px; right: 12px; top: 12px; display: flex; flex-direction: column; gap: 4px; }
+.t-list > span { display: flex; gap: 5px; align-items: center; background: #fff; border: 1px solid rgba(58,57,80,.18); padding: 2px 6px; white-space: nowrap; }
+.t-list em { width: 6px; height: 6px; display: block; }
+.t-alloc { left: 12px; right: 12px; top: 20px; display: flex; gap: 2px; height: 14px; }
+.t-alloc b { display: block; height: 100%; }
+.t-bubble { background: #fff; border: 1px solid rgba(58,57,80,.22); padding: 3px 6px; white-space: nowrap; border-radius: 6px 6px 6px 0; }
+.t-bubble.bot { background: var(--ink); color: var(--bg); border-color: var(--ink); border-radius: 6px 6px 0 6px; }
+.cell { position: relative; }
+.cell-no { position: absolute; right: 40px; top: 20px; font: 400 10px var(--mono); color: var(--faint); letter-spacing: .06em; }
 
 /* About and footer */
 .about { gap: 48px; }
@@ -250,6 +277,11 @@ footer { display: block; padding: 56px var(--gutter) 0; font: 400 13.5px var(--s
   .bars > div { grid-template-columns: 112px 1fr 48px; gap: 8px; }
   .status-panel > div { padding: 22px 20px; }
   .row { grid-template-columns: 36px minmax(0, 1fr) auto; gap: 14px; padding: 18px 4px; }
+  .tile { width: 36px; height: 36px; padding: 0; background: none; }
+  .tile-paper { display: none; }
+  .tile .glyph { position: static; width: 36px; height: 36px; border: 0; border-radius: 8px; }
+  .tile .glyph svg { width: 21px; height: 21px; }
+  .cell-no { display: none; }
   .row .num { display: none; }
   .row:hover { padding-left: 4px; }
   .strip { gap: 14px; }
